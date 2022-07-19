@@ -1,0 +1,37 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:9999;
+}
+
+body {
+    background-image: url("/img/backgrpund-order.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.ms-height{
+    min-height:600px;
+    width:300px
+}
+.card {
+    background-color: rgba(0,0,0, 0.9) !important;
+    border: none !important;
+    color:#fff;
+}
+.ms-height img{
+    height:300px;
+    width:300px;
+   object-fit:cover;
+}
+.ms-top-container {
+    padding-top: 100px;
+}

@@ -1,0 +1,12 @@
+﻿
+
+body {
+   /* background-size: cover;
+    background-repeat: no-repeat;*/
+    background-image: url("/img/jumbotron.jpg");
+  /*  background-position: center;
+    margin-top: 115px;*/
+    min-height: 600px background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

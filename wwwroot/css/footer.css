@@ -1,0 +1,30 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ms-bg-footer {
+    background-color: #e55935;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #fff !important;
+}
+
+li {
+    padding: 5px;
+}
+
+ul {
+    list-style: none;
+}
+
+.ms-logo-footer {
+    width: 100px;
+}
+
+.ms-img-globe-text {
+    width: 16px;
+}

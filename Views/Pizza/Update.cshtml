@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "Layout/_LayoutSenzaFooter";
+}
+@{
+    ViewData["Title"] = "Inserisci una nuova pizza";
+}
+
+@model Pizza
+
+
+<link rel="stylesheet" href="~/css/pizzaIndex.css" asp-append-version="true" />
+
+<div class="container w-50">
+    <div class="row justify-content-center">
+        <div class="col-12">
+
+            <h1>Inserisci una nuova pizza</h1>
+
+            <form asp-controller="Pizza" asp-action="Update" asp-route-id="@Model.PizzaId" method="post" >
+
+                @Html.AntiForgeryToken()
+                
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label text-white"></label>
+                    <input asp-for="Name" placeholder="es. Margherita" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label text-white"></label>
+                    <input asp-for="Description"placeholder="es. Pomodoro, Mozzarella" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                 <div class="form-group">
+                    <label asp-for="Img" class="control-label text-white"></label>
+                    <input asp-for="Img" placeholder="es. /img/pizza-margherita.jpg" class="form-control" />
+                    <span asp-validation-for="Img" class="text-danger"></span>
+                </div>
+
+                 <div class="form-group">
+                    <label asp-for="Price" class="control-label text-white"></label>
+                    <input asp-for="Price" placeholder="es. 10" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+
+                <div class="text-end">
+                    <input type="submit"  class="btn px-4 btn-success mt-4" value="Save"/>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

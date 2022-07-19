@@ -1,0 +1,91 @@
+﻿@{
+    Layout = "Layout/_LayoutSenzaFooter";
+}
+@{
+    ViewData["Title"] = "Lista Pizze";
+}
+@model List<Pizza>
+
+
+<link rel="stylesheet" href="~/css/pizzaIndex.css" asp-append-version="true" />
+<div class="ms-bg">
+
+    <div class="mb-5 text-center ">
+       
+        <img  src="/img/menu.png" alt="Card image cap">
+    </div>
+
+    <div>
+        <a class="btn btn-primary" href="@Url.Action("Create","Pizza")">Inserisci nuova pizza</a>
+    </div>
+    <hr />
+
+    
+
+    <div class="row  mb-5 g-4 ">
+        @foreach (Pizza pizza in Model)
+        {
+            <div class="col-12 col-sm-6 col-xl-4">
+
+                <div class="card ms-height">
+                      <img class="card-img-top" src="@pizza.Img" alt="Card image cap">
+                      <div class="card-body">
+                            <h5 class="card-title">@pizza.Name</h5>
+                            <p class="card-text">@pizza.Description</p>
+                            <p class="card-text">Prezzo: @pizza.Price €</p>
+                            <div class="d-flex justify-content-around">
+                                <a href="@Url.Action("Update","Pizza", new {id=pizza.PizzaId})" class="btn btn-warning">Modifica</a>
+                                <a href="@Url.Action("Details","Pizza", new {id=pizza.PizzaId})" class="btn btn-info">Dettagli</a>
+                                <form asp-controller="Pizza" asp-action="Delete" asp-route-id="@pizza.PizzaId" method="post">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit"  class="btn btn-danger" >Elimina</button>
+                                </form>
+
+                            </div>
+                      </div>
+                </div>
+
+            </div>
+        }
+    </div>
+     
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@{
+    List<Pizza> pizzas = new List<Pizza>();
+    pizzas.Add(new Pizza("Bufalina", "/img/pizza-buffala-prosciutto.jpg", "Pomodoro, Mozzarella di Bufala Campana DOP, Prosciutto Crudo di San Daniele",10));
+    pizzas.Add(new Pizza("Triveneto", "/img/pizza-con-pancetta.jpg", "Pomodoro, Mozzarella, Pancetta, Radicchio di Treviso",9.50));
+    pizzas.Add(new Pizza("Diavola", "/img/pizza-Diavola.jpg", "Pomodoro, Mozzarella, Salamino Piccante",8.50));
+    pizzas.Add(new Pizza("Estate", "/img/pizza-estate.jpg", "Pomodoro, Mozzarella, Ruccola, Pomodorini, Grana",12));
+    pizzas.Add(new Pizza("Mortadella, Pistacchio, Stracciatella", "/img/pizza-mortadella.jpg", "Pomodoro, Mozzarella, Mortadella, Pistacchio di Bronte, Stracciatella",14));
+    pizzas.Add(new Pizza("Tonno e Cipolla", "/img/pizza-tonno-cipolla.jpg", "Pomodoro, Mozzarella, Tonno, Cipolla",7));
+    
+}*@

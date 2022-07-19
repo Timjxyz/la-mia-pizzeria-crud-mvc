@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "Layout/_LayoutBase";
+}
+@{
+    ViewData["Title"] = "Dettagli";
+}
+@model Pizza
+
+<link rel="stylesheet" href="~/css/pizzaIndex.css" asp-append-version="true" />
+<div class="row  mb-5 g-4 ">
+        
+        
+    <div class="col-12 col-sm-6 col-xl-4">
+
+        <div class="card ms-height">
+            <img class="card-img-top" src="@Model.Img" alt="Card image cap">
+            <div class="card-body">
+            <h5 class="card-title">@Model.Name</h5>
+            <p class="card-text">@Model.Description</p>
+                <p class="card-text">Prezzo: @Model.Price €</p>
+                  
+            <a class="btn btn-success" asp-area="" asp-controller="Pizza" asp-action="Index">Torna indietro</a>
+            </div>
+        </div>
+    </div>
+              
+        
+</div>
+
+
