@@ -17,7 +17,8 @@
             <div class="card-body">
             <h5 class="card-title">@Model.Name</h5>
             <p class="card-text">@Model.Description</p>
-                <p class="card-text">Prezzo: @Model.Price €</p>
+            <p class="card-text">Categoria: @Model.Category.Name </p>
+            <p class="card-text">Prezzo: @Model.Price €</p>
                   
             <a class="btn btn-success" asp-area="" asp-controller="Pizza" asp-action="Index">Torna indietro</a>
             </div>

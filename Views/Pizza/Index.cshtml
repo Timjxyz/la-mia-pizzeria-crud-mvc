@@ -32,6 +32,7 @@
                       <div class="card-body">
                             <h5 class="card-title">@pizza.Name</h5>
                             <p class="card-text">@pizza.Description</p>
+                            <p class="card-text">@pizza.Category.Name</p>
                             <p class="card-text">Prezzo: @pizza.Price €</p>
                             <div class="d-flex justify-content-around">
                                 <a href="@Url.Action("Update","Pizza", new {id=pizza.PizzaId})" class="btn btn-warning">Modifica</a>
